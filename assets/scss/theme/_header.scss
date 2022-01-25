@@ -58,7 +58,7 @@ header {
     nav {
         display: flex;
         justify-content: space-between;
-        margin-right: 15%;
+        margin-right: 5%;
         text-align: left;
         .main-logo {
             width: 15%;
@@ -76,15 +76,41 @@ header {
             height: auto;
             cursor: pointer;  
 
-            li:first-child {
-                font-family: $spElite;
-                color: $mainColor;
+            li {
+                font-size: 2rem;
+                &:first-child {
+                    font-family: $spElite;
+                    color: $mainColor;
+                }
+                .sous-menu {
+                    transform: scale(0);
+                    transform-origin: top center;
+                    transition: all 300ms ease-in-out;  
+                    
+                    li {
+                        font-size: 1.5rem;
+                        background-color: black;
+                        padding: 10px 10px;
+                        // border: 1px solid $thirdColor;
+                        transform: scale(0);
+                        transform-origin: top center;
+                        transition: all 300ms ease-in-out;
+                            
+                        a {
+                            color: $thirdColor;
+    
+                            &:hover {
+                                color: $mainColor;
+                            }
+                        }
+                    }
+                } 
             }
 
             .contact-banner a{
-                background-color: #f0920560;
+                background-color: rgba($color: #f09205, $alpha: 0.2);
                 padding: 15px;
-                border-radius: 25px;
+                border-radius: 40px;
                 font-family: $robotoMono;
                 &:hover span i{
                     transition: all 0.3s ease-in-out;
@@ -92,28 +118,7 @@ header {
                 }
             }
 
-            .sous-menu {
-                transform: scale(0);
-                transform-origin: top center;
-                transition: all 300ms ease-in-out;  
-                
-                li {
-                    background-color: black;
-                    padding: 5px 0;
-                    border: 1px solid $thirdColor;
-                    transform: scale(0);
-                    transform-origin: top center;
-                    transition: all 300ms ease-in-out;
-                        
-                    a {
-                        color: $thirdColor;
-
-                        &:hover {
-                            color: $mainColor;
-                        }
-                    }
-                }
-            }  
+             
 
             li:hover .sous-menu li{
                 transform: scale(1);
