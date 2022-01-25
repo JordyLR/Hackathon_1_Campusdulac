@@ -57,15 +57,25 @@ table {
 }
 
 header {
-  background-color: yellow;
+  background-image: url("../img/fond.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 header #main-banner {
   text-align: center;
-  padding: 4em;
+  padding: 32em;
 }
 header #main-banner h1 {
-  font-size: 3em;
-  text-shadow: 2px 1px red, 4px 1px blue;
+  color: white;
+  word-spacing: 1em;
+  font-size: 5em;
+  text-shadow: 8px 1px orange;
+}
+header #main-banner h1 span {
+  font-size: 0.8em;
+  color: black;
+  text-shadow: none;
 }
 header nav {
   display: flex;
