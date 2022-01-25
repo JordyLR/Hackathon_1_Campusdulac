@@ -7,9 +7,9 @@ header {
     &::after{
         content: ""; 
         position: absolute; 
-        width: 40em;
-        height: 2vh;
-        top: 3.5em;
+        width: 45vw;
+        height: 0vh;
+        top: 1.5em;
         left: 15em;  
         border: solid 1px $mainColor;
         border-color: $mainColor transparent transparent transparent;
@@ -17,13 +17,12 @@ header {
     &::before{
         content: ""; 
         position: absolute; 
-        width: 20%;
-        height: 0vh;
-        top: 45%;
-        left: -5%;  
+        width: 0em;
+        height: 40vh;
+        top: 15em;
+        left: 4em;  
         border: solid 1px $mainColor;
-        border-color: $mainColor transparent transparent transparent;
-        transform: rotate(90deg);
+        border-color: transparent transparent transparent $mainColor ;
     }
     // #main-banner {
     text-align: center;
