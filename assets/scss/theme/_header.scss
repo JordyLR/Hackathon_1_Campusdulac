@@ -1,0 +1,126 @@
+header {
+    background-color: yellow;
+
+    #main-banner {
+        text-align: center;
+        padding: 4em;
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 1px red, 4px 1px blue;
+        }
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10%;
+        text-align: left;
+        padding-top: 1em;
+        height: 2em;
+        .deroulant {
+            display: flex;
+            height: auto;
+            cursor: pointer;   
+
+            .sous-menu {
+                transform: scale(0);
+                transform-origin: top center;
+                transition: all 300ms ease-in-out;   
+                li {
+                    background-color: black;
+                    padding: 5px 0;
+                    border: 1px solid white;
+                    transform: scale(0);
+                    transform-origin: top center;
+                    transition: all 300ms ease-in-out;
+
+                    a {
+                        color: white;
+                    }
+                }
+            }     
+
+            li:hover .sous-menu li{
+                transform: scale(1);
+            }
+            li:hover .sous-menu{
+                transform: scale(1);
+            }
+        }
+        #burger {
+            display: none;       
+        }   
+    }
+}    
+@media screen and (max-width: 768px) {
+    header {
+        position: relative;
+        nav {
+            #burger {
+                width:30px;
+                height:2px;
+                background:blue;
+                display:inline-block;
+                position:relative;
+            }
+            #burger::before,
+            #burger::after {
+                content:'';
+                width:30px;
+                height:2px;
+                background:blue;
+                display:inline-block;
+                position:absolute;
+                transform-origin: center;
+                transition: all 0.3s ease;
+            }
+            #burger::before {
+                top:-7px;
+            }
+            #burger::after {
+                top:7px;
+            }
+            #burger.open {
+                background:transparent; /* la barre du milieu disparait */
+            }
+            /* celles du haut et du bas s'inclinent pour former une croix */
+            #burger.open::before {
+                transform: rotate(45deg); 
+                top:0;
+            }
+            #burger.open::after {
+                transform: rotate(-45deg);
+                top:0;
+            }
+            #deroulant {
+                display: flex;
+                flex-flow: column;
+                background:pink;
+                position: absolute;
+                width:100%;
+                left: 0;
+                top: 2em;
+                padding:0.5em;
+                transform:scaleY(0);
+                transform-origin:center top;
+                transition:all 0.3s ease;
+
+                .sous-menu {
+                    transform: scale(1);
+                    z-index: 10;
+                    li {
+                        transform: scale(1);
+                        margin-left: 2em;
+                        background-color: transparent;
+                        border: none;
+                        a {
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+        #deroulant.open {
+            transform:scaleY(1);
+        }
+    }
+}

@@ -1,3 +1,183 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  background-color: yellow;
+}
+header #main-banner {
+  text-align: center;
+  padding: 4em;
+}
+header #main-banner h1 {
+  font-size: 3em;
+  text-shadow: 2px 1px red, 4px 1px blue;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10%;
+  text-align: left;
+  padding-top: 1em;
+  height: 2em;
+}
+header nav .deroulant {
+  display: flex;
+  height: auto;
+  cursor: pointer;
+}
+header nav .deroulant .sous-menu {
+  transform: scale(0);
+  transform-origin: top center;
+  transition: all 300ms ease-in-out;
+}
+header nav .deroulant .sous-menu li {
+  background-color: black;
+  padding: 5px 0;
+  border: 1px solid white;
+  transform: scale(0);
+  transform-origin: top center;
+  transition: all 300ms ease-in-out;
+}
+header nav .deroulant .sous-menu li a {
+  color: white;
+}
+header nav .deroulant li:hover .sous-menu li {
+  transform: scale(1);
+}
+header nav .deroulant li:hover .sous-menu {
+  transform: scale(1);
+}
+header nav #burger {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    position: relative;
+  }
+  header nav {
+    /* celles du haut et du bas s'inclinent pour former une croix */
+  }
+  header nav #burger {
+    width: 30px;
+    height: 2px;
+    background: blue;
+    display: inline-block;
+    position: relative;
+  }
+  header nav #burger::before,
+header nav #burger::after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: blue;
+    display: inline-block;
+    position: absolute;
+    transform-origin: center;
+    transition: all 0.3s ease;
+  }
+  header nav #burger::before {
+    top: -7px;
+  }
+  header nav #burger::after {
+    top: 7px;
+  }
+  header nav #burger.open {
+    background: transparent;
+    /* la barre du milieu disparait */
+  }
+  header nav #burger.open::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  header nav #burger.open::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  header nav #deroulant {
+    display: flex;
+    flex-flow: column;
+    background: pink;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 2em;
+    padding: 0.5em;
+    transform: scaleY(0);
+    transform-origin: center top;
+    transition: all 0.3s ease;
+  }
+  header nav #deroulant .sous-menu {
+    transform: scale(1);
+    z-index: 10;
+  }
+  header nav #deroulant .sous-menu li {
+    transform: scale(1);
+    margin-left: 2em;
+    background-color: transparent;
+    border: none;
+  }
+  header nav #deroulant .sous-menu li a {
+    color: black;
+  }
+  header #deroulant.open {
+    transform: scaleY(1);
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
