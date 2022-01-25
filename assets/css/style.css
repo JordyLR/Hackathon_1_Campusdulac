@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Special Elite";
+  src: url(../fonts/Special_Elite/SpecialElite-Regular.ttf);
+}
+@font-face {
+  font-family: "Roboto Mono";
+  src: url(../fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -59,36 +67,94 @@ table {
 header {
   background-image: url("../img/fond.png");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
-}
-header #main-banner {
+  min-height: 100vh;
   text-align: center;
-  padding: 32em;
+  height: auto;
+  position: relative;
 }
-header #main-banner h1 {
-  color: white;
-  word-spacing: 1em;
-  font-size: 5em;
-  text-shadow: 8px 1px orange;
+header::after {
+  content: "";
+  position: absolute;
+  width: 40em;
+  height: 2vh;
+  top: 3.5em;
+  left: 15em;
+  border: solid 1px #F09205;
+  border-color: #F09205 transparent transparent transparent;
 }
-header #main-banner h1 span {
-  font-size: 0.8em;
+header::before {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 0vh;
+  top: 45%;
+  left: -5%;
+  border: solid 1px #F09205;
+  border-color: #F09205 transparent transparent transparent;
+  transform: rotate(90deg);
+}
+header h1 {
+  padding-top: 2.5em;
+  color: #E4E4E4;
+  word-spacing: 0.5em;
+  font-size: 8rem;
+  font-family: "Special Elite";
+  text-shadow: 10px 1px #F09205;
+}
+header h1 span {
+  font-size: 4rem;
   color: black;
   text-shadow: none;
+}
+header .icone-reseau {
+  position: absolute;
+  left: 3em;
+  bottom: 0;
+}
+header .icone-reseau li {
+  font-size: 3rem;
+  padding: 0.5em;
+}
+header .icone-reseau li a {
+  color: #F09205;
 }
 header nav {
   display: flex;
   justify-content: space-between;
-  margin: 0 10%;
+  margin-right: 15%;
   text-align: left;
-  padding-top: 1em;
-  height: 2em;
+}
+header nav .main-logo {
+  width: 15%;
+}
+header nav .main-logo img {
+  width: 100%;
+}
+header nav a {
+  color: #E4E4E4;
 }
 header nav .deroulant {
+  padding-top: 3em;
   display: flex;
+  color: #E4E4E4;
   height: auto;
   cursor: pointer;
+}
+header nav .deroulant li:first-child {
+  font-family: "Special Elite";
+  color: #F09205;
+}
+header nav .deroulant .contact-banner a {
+  background-color: #f0920560;
+  padding: 15px;
+  border-radius: 25px;
+  font-family: "Roboto Mono";
+}
+header nav .deroulant .contact-banner a:hover span i {
+  transition: all 0.3s ease-in-out;
+  transform: rotate(90deg);
 }
 header nav .deroulant .sous-menu {
   transform: scale(0);
@@ -98,13 +164,16 @@ header nav .deroulant .sous-menu {
 header nav .deroulant .sous-menu li {
   background-color: black;
   padding: 5px 0;
-  border: 1px solid white;
+  border: 1px solid #E4E4E4;
   transform: scale(0);
   transform-origin: top center;
   transition: all 300ms ease-in-out;
 }
 header nav .deroulant .sous-menu li a {
-  color: white;
+  color: #E4E4E4;
+}
+header nav .deroulant .sous-menu li a:hover {
+  color: #F09205;
 }
 header nav .deroulant li:hover .sous-menu li {
   transform: scale(1);

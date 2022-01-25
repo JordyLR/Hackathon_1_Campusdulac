@@ -1,52 +1,119 @@
 header {
     background-image: url('../img/fond.png');
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
-    #main-banner {
-        text-align: center;
-        padding: 32em;
-        h1 {
-            color: white;
-            word-spacing: 1em;
-            font-size: 5em;
-            text-shadow: 8px 1px orange;
-            span {
-                font-size: 0.8em;
-                color: black;
-                text-shadow: none;
+    min-height: 100vh;
+    &::after{
+        content: ""; 
+        position: absolute; 
+        width: 40em;
+        height: 2vh;
+        top: 3.5em;
+        left: 15em;  
+        border: solid 1px $mainColor;
+        border-color: $mainColor transparent transparent transparent;
+    }
+    &::before{
+        content: ""; 
+        position: absolute; 
+        width: 20%;
+        height: 0vh;
+        top: 45%;
+        left: -5%;  
+        border: solid 1px $mainColor;
+        border-color: $mainColor transparent transparent transparent;
+        transform: rotate(90deg);
+    }
+    // #main-banner {
+    text-align: center;
+    height: auto;
+    position: relative;
+    h1 {
+        padding-top: 2.5em;
+        color: $thirdColor;
+        word-spacing: 0.5em;
+        font-size: 8rem;
+        font-family: $spElite;
+        text-shadow: 10px 1px $mainColor;
+        span {
+            font-size: 4rem;
+            color: black;
+            text-shadow: none;
+        }
+    }
+    .icone-reseau {
+        position: absolute;
+        left: 3em;
+        bottom: 0;
+        li {
+            font-size: 3rem;
+            padding: 0.5em;
+            a{
+                color: $mainColor;
             }
         }
     }
+    // }
     nav {
         display: flex;
         justify-content: space-between;
-        margin: 0 10%;
+        margin-right: 15%;
         text-align: left;
-        padding-top: 1em;
-        height: 2em;
+        .main-logo {
+            width: 15%;
+            img {
+                width: 100%;
+            }
+        }
+        a {
+            color: $thirdColor;
+        }
         .deroulant {
+            padding-top: 3em;
             display: flex;
+            color: $thirdColor;
             height: auto;
-            cursor: pointer;   
+            cursor: pointer;  
+
+            li:first-child {
+                font-family: $spElite;
+                color: $mainColor;
+            }
+
+            .contact-banner a{
+                background-color: #f0920560;
+                padding: 15px;
+                border-radius: 25px;
+                font-family: $robotoMono;
+                &:hover span i{
+                    transition: all 0.3s ease-in-out;
+                    transform: rotate(90deg);
+                }
+            }
 
             .sous-menu {
                 transform: scale(0);
                 transform-origin: top center;
-                transition: all 300ms ease-in-out;   
+                transition: all 300ms ease-in-out;  
+                
                 li {
                     background-color: black;
                     padding: 5px 0;
-                    border: 1px solid white;
+                    border: 1px solid $thirdColor;
                     transform: scale(0);
                     transform-origin: top center;
                     transition: all 300ms ease-in-out;
-
+                        
                     a {
-                        color: white;
+                        color: $thirdColor;
+
+                        &:hover {
+                            color: $mainColor;
+                        }
                     }
                 }
-            }     
+            }  
 
             li:hover .sous-menu li{
                 transform: scale(1);
