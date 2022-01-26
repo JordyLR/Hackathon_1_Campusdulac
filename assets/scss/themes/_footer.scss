@@ -94,10 +94,10 @@ h3 {
   }
   a {
     font-size: 12px;
-  }
-  li:hover {
-    transform: scale(1.1);
-    transition: 0.2s;
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.2s;
+    }
   }
 }
 .corporate-container {

@@ -130,7 +130,7 @@ h3 {
   font-size: 12px;
 }
 
-.mentions-container li:hover {
+.mentions-container a:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: 0.2s;
