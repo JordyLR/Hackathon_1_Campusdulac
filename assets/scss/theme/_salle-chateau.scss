@@ -1,0 +1,79 @@
+#salle-presentation {
+    display: flex;
+    justify-content: center;
+    background-color: $secondColor;
+    color: $fourColor;
+    .box-presentation {
+        width: 40%;
+        p {
+            padding: 0 2em;
+            font-family: $thirdPolice;
+        }
+    }
+}
+#salle-description {
+    background-image: url('../img/chateau-ambulant-banniere.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: $thirdColor;
+    font-family: $secondPolice;
+    padding: 4em;
+    .box-description {
+        display: flex;
+        justify-content: center;
+        ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 80%;
+            li {
+                text-align: center;
+                font-size: 2rem;
+                width: 25%;
+                padding-bottom: 2em;
+            }
+        }
+    }
+    p {
+        text-align: center;
+        font-size: 2rem;
+    }
+}
+#reservation {
+    background-color: $secondColor;
+    .container-resa {
+        width: 70%;
+        margin: auto;
+        padding: 2em;
+        h4 {
+            color: $mainColor;
+            font-family: $spElite;
+        }
+        .reservation-table {
+            color: $thirdColor;
+            display: flex;
+            justify-content: center;
+    
+            ul {
+                li {
+                    text-align: center;
+                    padding: 1.5em;
+                    font-family: $thirdPolice;
+                }
+            }
+            .colonne-info a {
+                border: 1px solid $mainColor;
+                border-radius: 15px;
+                padding: 5px 10px;
+                color: $thirdColor;
+            }
+            .colonne-resa a {
+                background-color: $mainColor;
+                border-radius: 15px;
+                padding: 5px 10px;
+                color: $thirdColor;
+            }
+        }
+    }
+}

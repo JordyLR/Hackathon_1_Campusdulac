@@ -3,6 +3,10 @@
   src: url(../fonts/Special_Elite/SpecialElite-Regular.ttf);
 }
 @font-face {
+  font-family: "Fjalla One";
+  src: url(../fonts/Fjalla_One/FjallaOne-Regular.ttf);
+}
+@font-face {
   font-family: "Roboto Mono";
   src: url(../fonts/Roboto_Mono/static/RobotoMono-Regular.ttf);
 }
@@ -160,7 +164,7 @@ header nav .deroulant li {
   font-size: 2rem;
 }
 header nav .deroulant li:first-child {
-  font-family: "Special Elite";
+  font-family: "Fjalla One";
   color: #F09205;
 }
 header nav .deroulant li .sous-menu {
@@ -186,7 +190,7 @@ header nav .deroulant .contact-banner a {
   background-color: rgba(240, 146, 5, 0.2);
   padding: 15px;
   border-radius: 40px;
-  font-family: "Roboto Mono";
+  font-family: "Fjalla One";
 }
 header nav .deroulant .contact-banner a:hover span i {
   transition: all 0.6s ease-in-out;
@@ -332,7 +336,7 @@ header nav #burger::after {
   header nav #deroulant .contact-banner a {
     background-color: inherit;
     color: #F09205;
-    font-family: "Roboto Mono";
+    font-family: "Fjalla One";
   }
   header #deroulant.open {
     transform: scaleY(1);
@@ -374,6 +378,84 @@ header nav #burger::after {
   header nav .main-logo {
     width: 40%;
   }
+}
+#salle-presentation {
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
+  color: #886D14;
+}
+#salle-presentation .box-presentation {
+  width: 40%;
+}
+#salle-presentation .box-presentation p {
+  padding: 0 2em;
+  font-family: "Roboto Mono";
+}
+
+#salle-description {
+  background-image: url("../img/chateau-ambulant-banniere.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #E4E4E4;
+  font-family: "Fjalla One";
+  padding: 4em;
+}
+#salle-description .box-description {
+  display: flex;
+  justify-content: center;
+}
+#salle-description .box-description ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+#salle-description .box-description ul li {
+  text-align: center;
+  font-size: 2rem;
+  width: 25%;
+  padding-bottom: 2em;
+}
+#salle-description p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#reservation {
+  background-color: #000000;
+}
+#reservation .container-resa {
+  width: 70%;
+  margin: auto;
+  padding: 2em;
+}
+#reservation .container-resa h4 {
+  color: #F09205;
+  font-family: "Special Elite";
+}
+#reservation .container-resa .reservation-table {
+  color: #E4E4E4;
+  display: flex;
+  justify-content: center;
+}
+#reservation .container-resa .reservation-table ul li {
+  text-align: center;
+  padding: 1.5em;
+  font-family: "Roboto Mono";
+}
+#reservation .container-resa .reservation-table .colonne-info a {
+  border: 1px solid #F09205;
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: #E4E4E4;
+}
+#reservation .container-resa .reservation-table .colonne-resa a {
+  background-color: #F09205;
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: #E4E4E4;
 }
 
 /*# sourceMappingURL=style.css.map */
