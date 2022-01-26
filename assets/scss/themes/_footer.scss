@@ -1,8 +1,5 @@
 /*******Parametre généraux ******/
-@font-face {
-  font-family: "Special Elite";
-  src: url(/assets/fonts/SpecialElite-Regular.ttf);
-}
+
 * {
   margin: 0 auto;
   box-sizing: border-box;
@@ -23,6 +20,7 @@ h3 {
   font-family: $secondPolice;
   font-size: 24px;
 }
+/*************** Style *********************/
 .footer-container {
   display: flex;
   justify-content: space-around;
