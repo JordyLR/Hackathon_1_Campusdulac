@@ -4,7 +4,7 @@
 }
 @font-face {
   font-family: "Roboto Mono";
-  src: url(../fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
+  src: url(../fonts/Roboto_Mono/static/RobotoMono-Regular.ttf);
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -77,10 +77,10 @@ header {
 header::after {
   content: "";
   position: absolute;
-  width: 45vw;
+  width: 42%;
   height: 0vh;
-  top: 1.5em;
-  left: 15em;
+  top: 6.5%;
+  left: 13%;
   border: solid 1px #F09205;
   border-color: #F09205 transparent transparent transparent;
 }
@@ -88,14 +88,15 @@ header::before {
   content: "";
   position: absolute;
   width: 0em;
-  height: 40vh;
-  top: 15em;
-  left: 4em;
+  height: 40%;
+  top: 25%;
+  left: 5%;
   border: solid 1px #F09205;
   border-color: transparent transparent transparent #F09205;
 }
 header h1 {
-  padding-top: 2.5em;
+  padding-top: 2.2em;
+  padding-bottom: 1.5em;
   color: #E4E4E4;
   word-spacing: 0.5em;
   font-size: 8rem;
@@ -119,6 +120,19 @@ header .icone-reseau li {
 header .icone-reseau li a {
   color: #F09205;
 }
+header .scroll-down {
+  color: #F09205;
+  font-size: 2.5rem;
+  animation: bounce 0.5s ease-in infinite alternate;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
 header nav {
   display: flex;
   justify-content: space-between;
@@ -137,6 +151,7 @@ header nav a {
 header nav .deroulant {
   padding-top: 3em;
   display: flex;
+  justify-content: center;
   color: #E4E4E4;
   height: auto;
   cursor: pointer;
@@ -174,8 +189,8 @@ header nav .deroulant .contact-banner a {
   font-family: "Roboto Mono";
 }
 header nav .deroulant .contact-banner a:hover span i {
-  transition: all 0.3s ease-in-out;
-  transform: rotate(90deg);
+  transition: all 0.6s ease-in-out;
+  transform: rotate(180deg);
 }
 header nav .deroulant li:hover .sous-menu li {
   transform: scale(1);
@@ -187,17 +202,75 @@ header nav #burger {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1600px) {
+  header::before {
+    width: 30%;
+    top: 20%;
+  }
+  header::after {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  header::after {
+    width: 30%;
+  }
+  header::before {
+    top: 18%;
+  }
+}
+@media screen and (max-width: 1250px) {
+  header::after {
+    width: 25%;
+  }
+  header::before {
+    top: 14%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  header h1 {
+    font-size: 6rem;
+    padding-top: 4em;
+  }
+}
+@media screen and (max-width: 1140px) {
+  header::after {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 1040px) {
+  header::after {
+    width: 15%;
+  }
+}
+@media screen and (max-width: 996px) {
   header {
+    min-height: 80vh;
     position: relative;
+  }
+  header::before {
+    border-color: transparent;
+  }
+  header::after {
+    border-color: transparent;
+  }
+  header .icone-reseau {
+    left: 1.5em;
+  }
+  header .icone-reseau li {
+    font-size: 2rem;
   }
   header nav {
     /* celles du haut et du bas s'inclinent pour former une croix */
   }
+  header nav .main-logo {
+    width: 20%;
+  }
   header nav #burger {
+    margin-top: 2.5em;
     width: 30px;
     height: 2px;
-    background: blue;
+    background: #F09205;
     display: inline-block;
     position: relative;
   }
@@ -206,7 +279,7 @@ header nav #burger::after {
     content: "";
     width: 30px;
     height: 2px;
-    background: blue;
+    background: #F09205;
     display: inline-block;
     position: absolute;
     transform-origin: center;
@@ -233,12 +306,12 @@ header nav #burger::after {
   header nav #deroulant {
     display: flex;
     flex-flow: column;
-    background: pink;
+    background: #000000;
     position: absolute;
     width: 100%;
     left: 0;
-    top: 2em;
-    padding: 0.5em;
+    top: 4em;
+    padding: 1.5em;
     transform: scaleY(0);
     transform-origin: center top;
     transition: all 0.3s ease;
@@ -254,10 +327,52 @@ header nav #burger::after {
     border: none;
   }
   header nav #deroulant .sous-menu li a {
-    color: black;
+    color: #E4E4E4;
+  }
+  header nav #deroulant .contact-banner a {
+    background-color: inherit;
+    color: #F09205;
+    font-family: "Roboto Mono";
   }
   header #deroulant.open {
     transform: scaleY(1);
+  }
+}
+@media screen and (max-width: 850px) {
+  header h1 {
+    font-size: 4rem;
+    padding-top: 6em;
+  }
+  header h1 span {
+    font-size: 3rem;
+  }
+  header nav .main-logo {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 590px) {
+  header h1 {
+    font-size: 3rem;
+    padding-top: 7em;
+  }
+  header h1 span {
+    font-size: 2.5rem;
+  }
+  header nav .main-logo {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 430px) {
+  header h1 {
+    font-size: 3rem;
+    padding: 5em 2em;
+    margin: auto;
+  }
+  header h1 span {
+    font-size: 2.5rem;
+  }
+  header nav .main-logo {
+    width: 40%;
   }
 }
 

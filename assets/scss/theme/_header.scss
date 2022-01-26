@@ -4,32 +4,32 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     min-height: 100vh;
-    &::after{
-        content: ""; 
-        position: absolute; 
-        width: 45vw;
-        height: 0vh;
-        top: 1.5em;
-        left: 15em;  
-        border: solid 1px $mainColor;
-        border-color: $mainColor transparent transparent transparent;
-    }
-    &::before{
-        content: ""; 
-        position: absolute; 
-        width: 0em;
-        height: 40vh;
-        top: 15em;
-        left: 4em;  
-        border: solid 1px $mainColor;
-        border-color: transparent transparent transparent $mainColor ;
-    }
-    // #main-banner {
     text-align: center;
     height: auto;
     position: relative;
+        &::after{
+            content: ""; 
+            position: absolute; 
+            width: 42%;
+            height: 0vh;
+            top: 6.5%;
+            left: 13%;  
+            border: solid 1px $mainColor;
+            border-color: $mainColor transparent transparent transparent;
+        }
+        &::before{
+            content: ""; 
+            position: absolute; 
+            width: 0em;
+            height: 40%;
+            top: 25%;
+            left: 5%;  
+            border: solid 1px $mainColor;
+            border-color: transparent transparent transparent $mainColor ;
+        }
     h1 {
-        padding-top: 2.5em;
+        padding-top: 2.2em;
+        padding-bottom: 1.5em;
         color: $thirdColor;
         word-spacing: 0.5em;
         font-size: 8rem;
@@ -53,7 +53,15 @@ header {
             }
         }
     }
-    // }
+    .scroll-down {
+        color: $mainColor;
+        font-size: 2.5rem;
+        animation: bounce 0.5s ease-in infinite alternate;
+    }
+    @keyframes bounce{
+        from {transform: translateY(0);}
+        to   {transform: translateY(-10px);}
+   }
     nav {
         display: flex;
         justify-content: space-between;
@@ -71,6 +79,7 @@ header {
         .deroulant {
             padding-top: 3em;
             display: flex;
+            justify-content: center;
             color: $thirdColor;
             height: auto;
             cursor: pointer;  
@@ -85,12 +94,10 @@ header {
                     transform: scale(0);
                     transform-origin: top center;
                     transition: all 300ms ease-in-out;  
-                    
                     li {
                         font-size: 1.5rem;
                         background-color: black;
                         padding: 10px 10px;
-                        // border: 1px solid $thirdColor;
                         transform: scale(0);
                         transform-origin: top center;
                         transition: all 300ms ease-in-out;
@@ -112,8 +119,8 @@ header {
                 border-radius: 40px;
                 font-family: $robotoMono;
                 &:hover span i{
-                    transition: all 0.3s ease-in-out;
-                    transform: rotate(90deg);
+                    transition: all 0.6s ease-in-out;
+                    transform: rotate(180deg);
                 }
             }
 
@@ -130,15 +137,86 @@ header {
             display: none;       
         }   
     }
+    
 }    
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1600px) {
     header {
+        &::before {
+            width: 30%;
+            top: 20%;
+        }
+        &::after {
+            width: 35%;
+        }
+    }
+}
+@media screen and (max-width: 1400px) {
+    header {
+        &::after {
+            width: 30%;
+        }
+        &::before {
+            top: 18%;
+        }
+    }
+}
+@media screen and (max-width: 1250px) {
+    header {
+        &::after {
+            width: 25%;
+        }
+        &::before {
+            top: 14%;
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    header {
+        h1 {
+            font-size: 6rem;
+            padding-top: 4em;
+        }
+    }
+}
+@media screen and (max-width: 1140px) {
+    header {
+        &::after {
+            width: 20%;
+        }
+    }
+}
+@media screen and (max-width: 1040px) {
+    header {
+        &::after {
+            width: 15%;
+        }
+    }
+}
+@media screen and (max-width: 996px) {
+    header {
+        min-height: 80vh;
         position: relative;
+        &::before {
+            border-color: transparent;
+        }
+        &::after {
+            border-color: transparent;
+        }
+        .icone-reseau {
+            left: 1.5em;
+            li {
+                font-size: 2rem;
+            }
+        }
         nav {
+            .main-logo {
+                width: 20%;
+            }
             #burger {
+                margin-top: 2.5em;
                 width:30px;
                 height:2px;
-                background:blue;
+                background:$mainColor;
                 display:inline-block;
                 position:relative;
             }
@@ -147,7 +225,7 @@ header {
                 content:'';
                 width:30px;
                 height:2px;
-                background:blue;
+                background:$mainColor;
                 display:inline-block;
                 position:absolute;
                 transform-origin: center;
@@ -174,12 +252,12 @@ header {
             #deroulant {
                 display: flex;
                 flex-flow: column;
-                background:pink;
+                background:$secondeColor;
                 position: absolute;
                 width:100%;
                 left: 0;
-                top: 2em;
-                padding:0.5em;
+                top: 4em;
+                padding:1.5em;
                 transform:scaleY(0);
                 transform-origin:center top;
                 transition:all 0.3s ease;
@@ -193,14 +271,68 @@ header {
                         background-color: transparent;
                         border: none;
                         a {
-                            color: black;
+                            color: $thirdColor;
                         }
                     }
+                }
+                .contact-banner a{
+                    background-color: inherit;
+                    color: $mainColor;
+                    font-family: $robotoMono;
                 }
             }
         }
         #deroulant.open {
             transform:scaleY(1);
+        }
+    }
+}
+@media screen and (max-width: 850px){
+    header {
+        h1 {
+            font-size: 4rem;
+            padding-top: 6em;
+            span {
+                font-size: 3rem;
+            }
+        }
+        nav {
+            .main-logo {
+                width: 30%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 590px){
+    header {
+        h1 {
+            font-size: 3rem;
+            padding-top: 7em;
+            span {
+                font-size: 2.5rem;
+            }
+        }
+        nav {
+            .main-logo {
+                width: 30%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 430px){
+    header {
+        h1 {
+            font-size: 3rem;
+            padding: 5em 2em;
+            margin: auto;
+            span {
+                font-size: 2.5rem;
+            }
+        }
+        nav {
+            .main-logo {
+                width: 40%;
+            }
         }
     }
 }
